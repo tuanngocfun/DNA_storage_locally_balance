@@ -24,3 +24,5 @@
 
 venv
 visualization/node_modules
+
+__pycache__
