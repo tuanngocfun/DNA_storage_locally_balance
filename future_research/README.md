@@ -18,6 +18,19 @@ This approach successfully handles transfer matrices up to **8192×8192** (ℓ=1
 ## Files
 
 - **`fast_recurrence.py`** - Main implementation with CLI interface
+- **`generate_research_figures.py`** - Generate publication-quality figures
+- **`general_recurrence.py`** - Transfer matrix and symbolic methods
+- **`bounds_inequalities.py`** - Capacity bounds and analysis
+
+## Generated Figures
+
+Figures are saved to `slides/research_figures/`:
+- **`recurrence_order_growth.png`** - Minimal order vs theoretical upper bound
+- **`capacity_comparison.png`** - Shannon capacity across parameters
+- **`eigenvalue_distribution.png`** - Transfer matrix spectral structure
+- **`fn_growth_comparison.png`** - Sequence count growth
+- **`forbidden_pattern_analysis.png`** - Valid pattern fraction
+- **`summary_comparison.png`** - Multi-parameter comparison
 
 ## Algorithm Details
 
