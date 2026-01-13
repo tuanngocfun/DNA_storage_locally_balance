@@ -2,6 +2,8 @@
 """
 Fast Recurrence Discovery using Competitive Programming Techniques
 
+Author: Nguyen Tuan Ngoc
+
 This module uses advanced algorithms to discover recurrence relations
 for large (ℓ, δ) parameters that would be infeasible with symbolic computation.
 

@@ -2,6 +2,8 @@
 """
 Main Runner Script for Future Research on General (ℓ, δ) Recurrences
 
+Author: Nguyen Tuan Ngoc
+
 This script orchestrates all research computations and generates comprehensive
 output for the lecturer's review. It extends Theorem 2 from Ge22 paper to
 arbitrary (ℓ, δ) parameters.

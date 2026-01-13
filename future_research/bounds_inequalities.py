@@ -2,6 +2,8 @@
 """
 Bounds and Inequalities for |Σ^n(ℓ,δ)|
 
+Author: Nguyen Tuan Ngoc
+
 This module explores bounds and inequalities on the size of locally balanced string sets,
 as suggested in Section VI of the Ge22 paper.
 

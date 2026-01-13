@@ -2,6 +2,8 @@
 Graph Algorithm 1 - Section IV & V of Ge22 Paper
 Build graph G_m and prune to find out-degree core for Construction 3.
 
+Author: Nguyen Tuan Ngoc
+
 G_m Definition:
 - Vertices: All binary strings of length m that are internally (ℓ,δ)-locally balanced
 - Edges: Edge x→y exists if concatenation xy is (ℓ,δ)-locally balanced

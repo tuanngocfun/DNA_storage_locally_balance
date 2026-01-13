@@ -2,6 +2,8 @@
 """
 Generate Research Figures for Future Work
 
+Author: Nguyen Tuan Ngoc
+
 This script generates publication-quality figures for the future research findings:
 1. Recurrence order growth with parameters
 2. Capacity comparison across (ℓ, δ)

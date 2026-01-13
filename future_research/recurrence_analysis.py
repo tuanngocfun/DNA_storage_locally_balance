@@ -2,6 +2,8 @@
 """
 Recurrence Analysis - Patterns and Complexity Study
 
+Author: Nguyen Tuan Ngoc
+
 This module analyzes the discovered recurrence relations across different (ℓ,δ) parameters
 to find patterns, simplifications, and theoretical insights.
 

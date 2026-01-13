@@ -2,6 +2,8 @@
 """
 Cross-check (Audit) with M2's verifier code.
 Compares results on 1000 random strings as required by task assignment.
+
+Author: Nguyen Tuan Ngoc
 """
 
 import sys

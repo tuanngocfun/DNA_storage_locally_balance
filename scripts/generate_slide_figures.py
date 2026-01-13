@@ -2,6 +2,8 @@
 """
 Generate visualizations and tables for M4 Verifier slides.
 This script creates actual plots and data tables based on code output.
+
+Author: Nguyen Tuan Ngoc
 """
 
 import sys

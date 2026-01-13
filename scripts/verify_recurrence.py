@@ -2,6 +2,8 @@
 """
 Verify Theorem 2 recurrence from Section III.
 For (ℓ=6, δ=1): f_{n+12} = f_{n+11} + f_{n+10} + f_{n+9} - f_{n+6} - f_{n+4} - f_{n+3} + f_n
+
+Author: Nguyen Tuan Ngoc
 """
 
 import sys

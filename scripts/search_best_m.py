@@ -2,6 +2,8 @@
 """
 Search for the best rate s/m using Algorithm 1.
 Reproduces Construction 3 results from the paper.
+
+Author: Nguyen Tuan Ngoc
 """
 
 import sys

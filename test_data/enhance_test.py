@@ -1,3 +1,9 @@
+"""
+Enhanced Test Suite Generator
+
+Author: Nguyen Tuan Ngoc
+"""
+
 import json
 import random
 

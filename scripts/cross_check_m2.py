@@ -2,6 +2,8 @@
 """
 Cross-check M4 verifier with M2's definitions_lib.py
 This script compares results from both implementations on random test strings.
+
+Author: Nguyen Tuan Ngoc
 """
 
 import sys

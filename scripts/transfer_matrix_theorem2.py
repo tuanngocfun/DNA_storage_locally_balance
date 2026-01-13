@@ -2,6 +2,8 @@
 """
 Transfer Matrix Method for Theorem 2 Verification.
 
+Author: Nguyen Tuan Ngoc
+
 This script uses the Transfer Matrix (Adjacency Matrix of the DFA) approach
 to derive the Characteristic Polynomial and verify Theorem 2 from the paper
 "Coding schemes for locally balanced constraints".

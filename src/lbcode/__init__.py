@@ -2,6 +2,8 @@
 LBCode - Locally Balanced Constraint Coding Library
 Based on Ge22 Paper: "Coding for Locally Balanced Constraints"
 
+Author: Nguyen Tuan Ngoc
+
 M4 Verifier Implementation
 """
 

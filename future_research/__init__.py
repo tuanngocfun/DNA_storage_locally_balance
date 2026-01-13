@@ -1,5 +1,7 @@
 """
-Future Research Module - General Recurrence Relations for Locally Balanced Constraints
+Future Research Module
+
+Author: Nguyen Tuan Ngoc - General Recurrence Relations for Locally Balanced Constraints
 
 This module extends the work in Section V of the Ge22 paper by:
 1. Discovering linear recurrence relations for general (ℓ, δ) parameters

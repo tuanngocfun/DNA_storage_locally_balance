@@ -2,6 +2,8 @@
 Verifier Module - Definition 1: Locally Balanced Constraint Check
 Based on Ge22 Paper Section II
 
+Author: Nguyen Tuan Ngoc
+
 A binary string x is (ℓ,δ)-locally balanced if:
 - ℓ is even
 - Every substring of length ℓ has Hamming weight in [ℓ/2 - δ, ℓ/2 + δ]

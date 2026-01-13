@@ -2,6 +2,8 @@
 DP Automaton - Count locally balanced sequences using Dynamic Programming.
 Used to verify Theorem 2 (recurrence relations) from Section III.
 
+Author: Nguyen Tuan Ngoc
+
 The automaton has states = all (ℓ-1)-bit strings.
 Transitions: state s + bit b is valid if the new ℓ-bit window satisfies LB constraint.
 

@@ -2,6 +2,8 @@
 """
 Run golden test cases against the verifier.
 Validates that the verifier implementation matches expected results.
+
+Author: Nguyen Tuan Ngoc
 """
 
 import json

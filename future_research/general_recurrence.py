@@ -2,6 +2,8 @@
 """
 General Recurrence Relation Discovery for Locally Balanced Constraints
 
+Author: Nguyen Tuan Ngoc
+
 This module discovers linear recurrence relations for |Σ^n(ℓ,δ)| for GENERAL (ℓ,δ).
 The paper only proved the recurrence for (6,1). We extend this to arbitrary parameters.
 
