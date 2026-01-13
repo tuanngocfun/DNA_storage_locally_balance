@@ -66,6 +66,13 @@ codes/
 │   ├── golden_test_cases_v2.json  # 14 extended test cases
 │   └── enhance_test.py            # Enhanced test generator
 │
+├── M1_work/                       # M1's greedy constructor code
+│   ├── test1.py                   # Main interactive CLI for greedy algorithm
+│   ├── generate_constant_weight_codewords.py  # Generate all constant-weight strings
+│   ├── lb_check.py                # Local balance verification
+│   ├── minimum_hamming_distance_check.py      # Hamming distance computation
+│   └── rate_calculate.py          # Code rate calculation
+│
 ├── M2_work/                       # M2's code (for cross-check)
 │   └── definitions_lib.py         # DNAStorageCodeChecker implementation
 │
@@ -271,6 +278,60 @@ python scripts/generate_slide_figures.py
 
 ---
 
+### 7. M1 Greedy Constructor (Interactive)
+
+M1's greedy approach constructs codes by generating constant-weight codewords, filtering by local balance, and ensuring minimum Hamming distance.
+
+```bash
+cd M1_work
+python test1.py
+```
+
+**Interactive Steps:**
+
+1. **Generate Constant-Weight Codebook**
+   - Input: Even integer n (codeword length)
+   - Generates all binary strings of length n with weight n/2
+   - Example: n=6 generates C(6,3)=20 codewords
+
+2. **Local Balance Filtering**
+   - Input: Window size ℓ (even), deviation δ
+   - Filters codewords satisfying (ℓ,δ)-locally balanced constraint
+   - Shows pass/fail statistics
+
+3. **Hamming Distance Check**
+   - Input: Required minimum distance d_min
+   - Reports offending pairs and frequency analysis
+   - Optional: Remove minimal codewords using maximum clique algorithm
+   - Outputs final codebook and code rate
+
+**Example Session:**
+```
+=== Step 1: Generate constant-weight codebook ===
+Enter an even integer n: 8
+Generated 70 codewords of length 8 with weight 4.
+
+=== Step 2: Local balance check ===
+Enter window size l: 4
+Enter delta: 1
+Local balance summary: PASS=62, FAIL=8 (total=70)
+
+=== Step 3: Minimum Hamming distance check ===
+Enter required minimum Hamming distance d_min: 3
+Target minimum distance: 3
+Actual minimum distance in codebook: 4
+PASS: The codebook satisfies the minimum Hamming distance requirement.
+Rate = log2(M)/n with M=62, n=8: 0.747447
+```
+
+**M1 Modules:**
+- `generate_constant_weight_codewords.py` - Combinatorial generation
+- `lb_check.py` - (ℓ,δ)-locally balanced verification
+- `minimum_hamming_distance_check.py` - Distance computation & maximum clique removal
+- `rate_calculate.py` - Code rate = log₂(M)/n
+
+---
+
 ## ✅ Verification Summary
 
 | Task | Result | Status |
@@ -373,6 +434,34 @@ python scripts/ref_check.py
 python test_data/enhance_test.py
 ```
 
+### Using M1's Greedy Constructor
+
+```python
+# Generate constant-weight codewords
+from M1_work.generate_constant_weight_codewords import generate_constant_weight_codewords
+from M1_work.lb_check import is_locally_balanced
+from M1_work.minimum_hamming_distance_check import min_hamming_distance
+from M1_work.rate_calculate import calculate_rate
+
+# Step 1: Generate all codewords of length n with weight n/2
+n = 8
+codebook = generate_constant_weight_codewords(n)
+print(f"Generated {len(codebook)} constant-weight codewords")
+
+# Step 2: Filter by local balance
+ell, delta = 4, 1
+lb_codewords = [cw for cw in codebook if is_locally_balanced(cw, ell, delta)]
+print(f"Locally balanced: {len(lb_codewords)}/{len(codebook)}")
+
+# Step 3: Check minimum Hamming distance
+min_dist, pair = min_hamming_distance(lb_codewords)
+print(f"Minimum Hamming distance: {min_dist}")
+
+# Calculate rate
+rate = calculate_rate(n, len(lb_codewords))
+print(f"Code rate: {rate:.6f}")
+```
+
 ### Adding New Test Cases
 
 Edit `test_data/golden_test_cases.json`:
@@ -427,14 +516,54 @@ pip install -r requirements.txt
 
 ---
 
-## 🤝 Team Members
+## 🤝 Team Members & Integration
 
 This project is part of a group assignment with the following roles:
 
-- **M1** (Lâm Xuân Bách) - Constructor A: Greedy algorithm
+- **M1** (Lâm Xuân Bách) - Constructor A: Greedy algorithm with constant-weight codewords
 - **M2** (Mai Thị Hằng Thư) - Simulator & Tools: Utilities and testing
 - **M3** (Dương Tất Hùng) - Constructor B: Paper FSM implementation
 - **M4** (Nguyễn Tuấn Ngọc) - Verifier: Math & graph validation (this repo)
+
+### M1 - Greedy Constructor
+
+M1's implementation (`M1_work/`) provides a greedy approach to construct error-correcting codes:
+
+**Features:**
+- Generates all constant-weight codewords (weight = n/2)
+- Filters by (ℓ, δ)-locally balanced constraint
+- Ensures minimum Hamming distance d_min ≥ 3
+- Removes minimal codewords to satisfy distance requirements using maximum clique algorithm
+- Calculates achievable code rate
+
+**Usage:**
+```bash
+cd M1_work
+python test1.py
+```
+
+**Interactive workflow:**
+1. **Step 1**: Generate constant-weight codewords of length n
+2. **Step 2**: Filter by local balance constraint (ℓ, δ)
+3. **Step 3**: Check/enforce minimum Hamming distance d_min
+4. **Output**: Final codebook with calculated rate = log₂(M)/n
+
+**Example:**
+```bash
+$ python test1.py
+=== Step 1: Generate constant-weight codebook ===
+Enter an even integer n (length of codewords): 6
+Generated 20 codewords of length 6 with weight 3.
+
+=== Step 2: Local balance check ===
+Enter window size l (must be even): 4
+Enter delta (>= 0): 1
+Local balance summary: PASS=18, FAIL=2 (total=20)
+
+=== Step 3: Minimum Hamming distance check ===
+Enter required minimum Hamming distance d_min (>= 0): 3
+Rate = log2(M)/n with M=12, n=6: 0.592481
+```
 
 ---
 
